@@ -24,9 +24,34 @@ body {
 
 header h1{
     text-align: center;
+    font-family: sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 5rem;
+    background-image: url("../image/pexels-codioful-6985048.jpg");
+    background-size: cover;
+    background-clip: text;
+    color: transparent;
+    animation: animate 5s linear infinite;
+}
+@keyframes animate {
+    to {
+        background-position-x: -200px;
+    }
 }
 
 .results{
     font-size: 2rem;
 }
 
+
+.center-main{
+    width: 50%;
+    margin: auto;
+    margin-top: 3rem;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    font-size: 2.5rem;
+    background-color: rgba(255, 255, 255, 0.14);
+}

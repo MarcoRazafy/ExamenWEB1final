@@ -11,9 +11,13 @@ html{
 body {
     width: 100%;
     height: 100vh;
-    background: linear-gradient(135deg, #0f172a, #312e81, #7e22ce, #db2777);
-    background-size: 400% 400%;
-    animation: gradientShift 5s ease infinite;
+    /* background: linear-gradient(135deg, #0f172a, #312e81, #7e22ce, #db2777); */
+    background-image: url("../image/final.jpg");
+    background-size: cover;
+    /* background-position: 100%; */
+    background-repeat: no-repeat;
+    /* background-size: 400% 400%; */
+    /* animation: gradientShift 20s ease infinite; */
 }
 
 @keyframes gradientShift {
@@ -28,15 +32,18 @@ header h1{
     font-weight: 900;
     text-transform: uppercase;
     font-size: 5rem;
-    background-image: url("../image/pexels-codioful-6985048.jpg");
-    background-size: cover;
+    /* background-image: url("../image/textColor.png"); */
+    /* background-position: 100%; */
+    color: #ffffff00;
+    /* background-size: cover;
     background-clip: text;
-    color: transparent;
-    animation: animate 5s linear infinite;
+    color: transparent; */
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+    animation: animate 5s alternate infinite;
 }
 @keyframes animate {
     to {
-        background-position-x: -200px;
+        background-position-x: -100%;
     }
 }
 
@@ -44,6 +51,11 @@ header h1{
     font-size: 2rem;
 }
 
+.combin{
+    width: 100%;
+    font-size: 2rem;
+    text-align: center;
+}
 
 .center-main{
     width: 50%;
@@ -53,5 +65,18 @@ header h1{
     padding: 2rem;
     border-radius: 2rem;
     font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.663);
     background-color: rgba(255, 255, 255, 0.14);
+}
+
+main .center-main input{
+    width: 80%;
+    font-size: 2rem;
+    margin-top: .5rem;
+    padding: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 1rem;
+    color: #fff;
+    background-color: #ffffff5e;
 }

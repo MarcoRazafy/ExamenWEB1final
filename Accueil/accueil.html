@@ -12,56 +12,62 @@
     <section class="presentation_top">
         <h1>Finger <span>Fury</span></h1>
         <div>
-            <p>Ready, set, type!</p>
+            <p>READY - SET - TYPE!</p><br>
             <p>Challenge your speed and precision against the timer.</p>
         </div>
     </section>
 
     <section class="presentation_middle">
-        <button class="presentation_middle_start"><h3>START</h3></button>
+        <button class="presentation_middle_start">
+            <i></i>
+            <h3>START</h3>
+        </button>
+
         <button class="presentation_middle_level"><h3>LEVEL</h3></button>
     </section>
 
     <section class="presentation_bottom">
-        <div class="presentation_bottom_settings">
-            <button>
-                <i class="fa-solid fa-gear"></i>
-                <p>Settings</p>
-            </button>
+        <button class="presentation_bottom_settings" onclick="ouvrir_option()">
+            <i class="fa-solid fa-gear"></i>
+            <p>Settings</p>
+        </button>
 
-            <div class="settings_list">
+        <div id="settings_list">
+            <div class="settings_list_content">
                 <button>Langage : </button>
-                    <div class="langage_lists">
-                        <ul>
-                            <li>Malagasy</li>
-                            <li>French</li>
-                            <li>English</li>
-                        </ul>
-                    </div>
+                <div class="langage_lists">
+                    <ul>
+                        <li>Malagasy</li>
+                        <li>French</li>
+                        <li>English</li>
+                    </ul>
+                </div>
+    
+            <button>Difficulty : </button>
+                <div class="difficulty_lists">
+                    <ul>
+                        <li>Easy</li>
+                        <li>Medium</li>
+                        <li>Hard</li>
+                    </ul>
+                </div>
+    
+            <button>Mode : </button>
+                <div class="mode_lits">
+                    <ul>
+                        <li>Light</li>
+                        <li>Dark</li>
+                    </ul>
+                </div>
 
-                <button>Difficulty : </button>
-                    <div class="difficulty_lists">
-                        <ul>
-                            <li>Easy</li>
-                            <li>Medium</li>
-                            <li>Hard</li>
-                        </ul>
-                    </div>
-
-                <button>Mode : </button>
-                    <div class="mode_lits">
-                        <ul>
-                            <li>Light</li>
-                            <li>Dark</li>
-                        </ul>
-                    </div>
+            <button class="fermer_btn" onclick="fermer_option()">Fermer</button>
             </div>
         </div>
 
-        <div class="presentation_bottom_about">
+        <button class="presentation_bottom_about">
             <i class="fa-solid fa-info"></i>
-            <p>About Finger Fury</p>
-        </div>
+            <p>About</p>
+        </button>
     </section>
 </body>
 

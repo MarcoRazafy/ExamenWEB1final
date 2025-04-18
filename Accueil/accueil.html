@@ -18,56 +18,134 @@
     </section>
 
     <section class="presentation_middle">
-        <button class="presentation_middle_start">
-            <i></i>
-            <h3>START</h3>
-        </button>
+        <button class="presentation_middle_start"><h3>START</h3></button>
 
         <button class="presentation_middle_level"><h3>LEVEL</h3></button>
+
+        <div class="level_lists">
+           <div class="level_lists_top">
+                <div class="level_lists_number">
+                    <i></i>
+                    <p>1</p>
+                </div>
+
+                <div class="level_lists_number">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>2</p>
+                </div>
+
+                <div class="level_lists_number">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>3</p>
+                </div>
+           </div>
+
+            <div class="level_lists_middle">
+                <div class="level_lists_number">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>4</p>
+                </div>
+    
+                <div class="level_lists_number">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>5</p>
+                </div>
+    
+                <div class="level_lists_number">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>6</p>
+                </div>
+            </div>
+
+            <div class="level_lists_bottom">
+                <div class="level_lists_number">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>7</p>
+                </div>
+    
+                <div class="level_lists_number">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>8</p>
+                </div>
+    
+                <div class="level_lists_number">
+                    <i class="fa-solid fa-lock"></i>
+                    <p>9</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="presentation_bottom">
-        <button class="presentation_bottom_settings" onclick="ouvrir_option()">
+        <div class="presentation_bottom_settings">
             <i class="fa-solid fa-gear"></i>
-            <p>Settings</p>
-        </button>
+            <button onclick="ouvrir_option()">Settings</button>
+        </div>
 
         <div id="settings_list">
             <div class="settings_list_content">
-                <button>Langage : </button>
-                <div class="langage_lists">
-                    <ul>
-                        <li>Malagasy</li>
-                        <li>French</li>
-                        <li>English</li>
-                    </ul>
+                <div class="settings_langage">
+                    <h1>Langage</h1>
+
+                    <div class="langage_lists">
+                        <label class="langage_lists_label"><input type="radio" name="lang" value="ma"><span class="radio-mark"></span>  Malagasy</label>
+                        <label class="langage_lists_label"><input type="radio" name="lang" value="fr"><span class="radio-mark"></span>  French</label>
+                        <label class="langage_lists_label"><input type="radio" name="lang" value="en"><span class="radio-mark"></span>  English</label>
+                    </div>
                 </div>
-    
-            <button>Difficulty : </button>
-                <div class="difficulty_lists">
-                    <ul>
-                        <li>Easy</li>
-                        <li>Medium</li>
-                        <li>Hard</li>
-                    </ul>
+        
+                <div class="settings_difficulty">
+                    <h1>Difficulty</h1>
+
+                    <div class="difficulty_lists">
+                        <label class="difficulty_lists_label"><input type="radio" name="difficulty" value="easy"><span class="radio-mark"></span>  Easy</label>
+                        <label class="difficulty_lists_label"><input type="radio" name="difficulty" value="medium"><span class="radio-mark"></span>  Medium</label>
+                        <label class="difficulty_lists_label"><input type="radio" name="difficulty" value="hard"><span class="radio-mark"></span>  Hard</label>
+                    </div>
                 </div>
-    
-            <button>Mode : </button>
-                <div class="mode_lits">
-                    <ul>
-                        <li>Light</li>
-                        <li>Dark</li>
-                    </ul>
+        
+                <div class="settings_mode">
+                    <h1>Mode</h1>
+
+                    <div class="mode_lists">
+                        <label class="mode_lists_label"><input type="radio" name="theme" value="light"><span class="radio-mark"></span>  Light</label>
+                        <label class="mode_lists_label"><input type="radio" name="theme" value="dark"><span class="radio-mark"></span>  Dark</label>  
+                    </div>
                 </div>
 
-            <button class="fermer_btn" onclick="fermer_option()">Fermer</button>
+                <div class="button_lists">
+                    <button class="fermer_btn" onclick="fermer_option()">Close</button>
+                    <button class="applique_btn" onclick="applique_option()">Applicable</button>
+                    <button class="defaut_btn" onclick="defaut_option()">Default</button>
+                </div>
             </div>
         </div>
 
-        <button class="presentation_bottom_about">
+
+        <div class="presentation_bottom_about">
             <i class="fa-solid fa-info"></i>
-            <p>About</p>
-        </button>
+            <button onclick="ouvrir_propos()">About</button>
+        </div>
+        
+        <div id="about_content">
+            <div class="about_really_content">
+                <h1>About <strong>FINGER FURY</strong></h1>
+
+                <p>
+                    <strong>FINGER FURY </strong>is an arcade-style game designed to put your reflexes to the test.
+                    The concept is simple: tap at the right moment, dodge traps, chain actions as fast as you can… and push your limits!
+                    Each level throws you into a fast-paced, intense environment where speed and
+                    precision are the only paths to victory. As you progress, the challenge increases,
+                    forcing you to react faster, focus harder, and master every move.
+                    Whether you're a casual player looking for quick fun or a competitor chasing high scores,
+                    <strong>FINGER FURY </strong>adapts to your pace. With its clean design, glowing visuals,
+                    and intuitive gameplay, the game delivers a smooth, addictive, and adrenaline-packed experience.
+                    Tap, react, repeat… and become the master of the click !
+                </p>
+    
+                <button class="retour_btn" onclick="fermer_propos()">Cancel</button>
+            </div>
+        </div>
     </section>
 </body>
 

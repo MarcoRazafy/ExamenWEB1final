@@ -43,7 +43,7 @@ body {
     transition: 1s;
 }
 .return i{
-    scale: 1.2  ;
+    scale: 1.2;
 }
 .return:hover{
     background-color: #aeaaaa;
@@ -93,6 +93,8 @@ header h1{
 .results{
     margin-top: 2rem;
     font-size: 2rem;
+    padding: 1rem;
+    background-color: #367c9d;
 }
 
 .combin{

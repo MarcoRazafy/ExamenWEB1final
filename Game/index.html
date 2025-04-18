@@ -5,27 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="Css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Typing Test</title>
 </head>
 
 <body>
     <header>
-        <h1>Typing Test</h1>
-
-        <div class="combin">
-            <label for="mode">Select Mode:</label>
-            <select id="mode">
-                <option value="easy">Easy</option>
-                <option value="medium">Medium</option>
-                <option value="hard">Hard</option>
-            </select>
-            <p id="results">Results : </p>
+        <div class="return"><i class="fa-solid fa-arrow-left"></i></div>
+        
+        <div class="title">
+            <h1 class=".animated-title" id="animatedTitle"></h1>
         </div>
 
+        
         <main>
+            <div class="combin">
+                <label for="mode">Select Mode:</label>
+                <select id="mode">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+                <p id="results">Results : </p>
+            </div>
             <div class="center-main">
                 <p id="word-display"></p>
-                <label for="input-field">Tapez un mot :</label>
+                <!-- <label for="input-field">Tapez un mot :</label> -->
                 <input type="text" id="input-field" placeholder="Tapez ici" autofocus>
             </div>
         </main>

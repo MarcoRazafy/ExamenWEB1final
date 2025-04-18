@@ -20,6 +20,20 @@ const words = {
     hard: ["synchronize", "complicated", "development", "extravagant", "misconception"]
 };
 
+
+// titre
+const title = "TYPING TEST";
+        const animatedTitle = document.getElementById('animatedTitle');
+        
+        title.split('').forEach((letter, index) => {
+            const span = document.createElement('span');
+            span.className = 'letter';
+            span.textContent = letter;
+            span.style.animationDelay = `${index * 0.1}s`;
+            animatedTitle.appendChild(span);
+        });
+        
+
 // Generate a random word from the selected mode
 const getRandomWord = (mode) => {
     const wordList = words[mode];
@@ -104,3 +118,5 @@ modeSelect.addEventListener("change", () => startTest());
 
 // Start the test
 startTest();
+
+

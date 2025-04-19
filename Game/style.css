@@ -204,7 +204,6 @@ main .center-main input {
     justify-content: center;
     width: 100%;
     height: 100vh;
-    background-color: #00000095;
     animation: slideLeft 1s forwards;
 }
 
@@ -231,8 +230,9 @@ main .center-main input {
   }
 }
 
-.text-box{
-    color: red;
+.text-score{
+    color: white;
+    margin-bottom: 1rem;
 }
 
 .score .box-score .boxButton{

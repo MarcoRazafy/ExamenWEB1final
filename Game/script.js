@@ -143,7 +143,7 @@ const highlightCurrentWord = (index) => {
     }
 };
 
-
+// show final score
 const showFinalScore = () => {
     const wordElements = wordDisplay.children;
     let correctCount = 0;
@@ -160,7 +160,8 @@ const showFinalScore = () => {
 
     const total = correctCount + incorrectCount;
     score.style.display = "flex";
-    TextScore.textContent = `🏁 Fin du jeu !\n✅ Mots corrects : ${correctCount} / ${total}\n❌ Mots faux : ${incorrectCount}`;
+    TextScore.textContent = `🏁 FINISH !\n✅ Words typed correctly: ${correctCount} out of ${total}\n❌ Mistyped words: ${incorrectCount}`
+;
 };
 
 //redirection game 

@@ -24,73 +24,79 @@
         <button class="presentation_middle_level" onclick="level_btn()"><h3>LEVEL</h3></button>
 
         <div id="level_lists">
-          <div class="level_lists_content">
-            <h1>FINGER <span>FURY</span></h1>
+            <div class="level_lists_content" id="page1">
+                <h1>FINGER <span>FURY</span></h1>
+                    <div class="level_really_lists">
+                        <div class="level_lists_top">
+                            <div class="level_lists_number">
+                                <p>1</p>
+                            </div>
+            
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>2</p>
+                            </div>
+            
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>3</p>
+                            </div>
+                       </div>
+            
+                        <div class="level_lists_middle">
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>4</p>
+                            </div>
+                
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>5</p>
+                            </div>
+                
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>6</p>
+                            </div>
+                        </div>
+            
+                        <div class="level_lists_bottom">
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>7</p>
+                            </div>
+                
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>8</p>
+                            </div>
+                
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>9</p>
+                            </div>
+                        </div>
+                    </div>
 
-            <div class="level_lists_top">
-                <div class="level_lists_number">
-                    <p>1</p>
-                </div>
-
-                <div class="level_lists_number">
-                    <i class="fa-solid fa-lock"></i>
-                    <p>2</p>
-                </div>
-
-                <div class="level_lists_number">
-                    <i class="fa-solid fa-lock"></i>
-                    <p>3</p>
-                </div>
-           </div>
-
-            <div class="level_lists_middle">
-                <div class="level_lists_number">
-                    <i class="fa-solid fa-lock"></i>
-                    <p>4</p>
-                </div>
-    
-                <div class="level_lists_number">
-                    <i class="fa-solid fa-lock"></i>
-                    <p>5</p>
-                </div>
-    
-                <div class="level_lists_number">
-                    <i class="fa-solid fa-lock"></i>
-                    <p>6</p>
+                <div class="level_button">
+                    <button class="level_button_retour" onclick="level_retour()">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <p>CANCEL</p>
+                    </button>
+        
+                    <button class="level_button_suivant" onclick="level_page(2)">
+                        <p>NEXT</p>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
                 </div>
             </div>
+        </div>
 
-            <div class="level_lists_bottom">
-                <div class="level_lists_number">
-                    <i class="fa-solid fa-lock"></i>
-                    <p>7</p>
-                </div>
-    
-                <div class="level_lists_number">
-                    <i class="fa-solid fa-lock"></i>
-                    <p>8</p>
-                </div>
-    
-                <div class="level_lists_number">
-                    <i class="fa-solid fa-lock"></i>
-                    <p>9</p>
-                </div>
-            </div>
+        <div class="level_lists_content" id="page2">
+            <div id="next_level_lists">
+                <h1>FINGER <span>FURY</span></h1>
 
-            <div class="level_button">
-                <button class="level_button_retour" onclick="level_retour1()">
-                    <i class="fa-solid fa-arrow-left"></i>
-                    <p>CANCEL</p>
-                </button>
-
-                <button class="level_button_suivant" onclick="level_next()">
-                    <p>NEXT</p>
-                    <i class="fa-solid fa-arrow-right"></i>
-                </button>
-
-                <div id="next_level_lists">
-                    <h1>FINGER <span>FURY</span></h1>
-
+                <div>
                     <div class="level_lists_top">
                         <div class="level_lists_number">
                             <i class="fa-solid fa-lock"></i>
@@ -141,33 +147,32 @@
                             <p>18</p>
                         </div>
                     </div>
+                </div>
 
-                    <div class="next_level_bouton">
-                        <button class="level_button_retour" onclick="level_retour2()">CANCEL</button>
+                <div class="next_level_bouton">
+                    <button class="level_button_retour" onclick="level_retour()">CANCEL</button>
 
-                        <div>
-                            <button class="level_button_precedent">
-                                <i class="fa-solid fa-arrow-left"></i>
-                                <p>PRECEDENT</p>
-                            </button>
+                    <div>
+                        <button class="level_button_precedent" onclick="level_page(1)"> 
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <p>PRECEDENT</p>
+                        </button>
 
-                            <button class="level_button_suivant">
-                                <p>NEXT</p>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </button>
-                        </div>
+                        <button class="level_button_suivant" onclick="level_page(3)">
+                            <p>NEXT</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
                     </div>
                 </div>
             </div>
-          </div>
         </div>
     </section>
 
     <section class="presentation_bottom">
-        <div class="presentation_bottom_settings">
+        <button class="presentation_bottom_settings" onclick="ouvrir_option()">
             <i class="fa-solid fa-gear"></i>
-            <button onclick="ouvrir_option()">Settings</button>
-        </div>
+            Settings
+        </button>
 
         <div id="settings_list">
             <div class="settings_list_content">
@@ -207,12 +212,11 @@
                 </div>
             </div>
         </div>
-
-
-        <div class="presentation_bottom_about">
+           
+        <button class="presentation_bottom_about" onclick="ouvrir_propos()">
             <i class="fa-solid fa-info"></i>
-            <button onclick="ouvrir_propos()">About</button>
-        </div>
+            About
+        </button>
         
         <div id="about_content">
             <div class="about_really_content">

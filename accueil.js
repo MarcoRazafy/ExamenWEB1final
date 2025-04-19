@@ -1,7 +1,3 @@
-document.querySelector('.presentation_middle_start').addEventListener('click', function() {
-  window.location.href = './Game/game.html'; 
-});
-
 function ouvrir_option() {
   const settings = document.getElementById("settings_list");
   settings.classList.remove("fermer");
@@ -56,14 +52,24 @@ function fermer_propos() {
   }, 400);
 }
 
-function level_btn() {
+function level_btn(pageNumber) {
   const level = document.getElementById("level_lists");
   level.classList.remove("fermer");
   level.classList.add("ouvert");
   level.style.display = "flex";
+
+  const pages = document.querySelectorAll('.level_lists_content');
+  pages.forEach(page => {
+    page.style.display = 'none';
+  });
+
+  const page = document.getElementById('page' + pageNumber);
+  if (page) {
+    page.style.display = 'block';
+  }
 }
 
-function level_retour1() {
+function level_retour() {
   const level = document.getElementById("level_lists");
   level.classList.remove("ouvert");
   level.classList.add("fermer");
@@ -73,30 +79,21 @@ function level_retour1() {
   }, 400);
 }
 
-function level_next() {
-  document.getElementById("next_level_lists").style.display = "flex";
-}
-
-function level_retour() {
-  document.getElementById("level_lists").style.display = "none";
-}
-
 function level_page(pageNumber) {
+  const level = document.getElementById("level_lists");
+  level.classList.remove("fermer");
+  level.classList.add("ouvert");
+  level.style.display = "flex";
+
   const pages = document.querySelectorAll('.level_lists_content');
   pages.forEach(page => {
     page.style.display = 'none';
   });
 
-  // Afficher la page souhaitée (par exemple, "page1", "page2", etc.)
   const page = document.getElementById('page' + pageNumber);
   if (page) {
     page.style.display = 'block';
   }
 }
 
-function level_btn() {
-  document.getElementById('level_lists').style.display = 'block';
-  // Affiche la première page par défaut
-  showPage(1);
-}
 

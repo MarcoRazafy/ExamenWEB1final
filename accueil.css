@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    width: 100%;
     height: auto;
 }
 
@@ -44,16 +43,10 @@ body {
 }
 
 .presentation_top span {
-    color: dimgray;
-    transition: 0.3s;
-}
-
-.presentation_top h1:hover {
-    color: dimgray;
-}
-
-.presentation_top span:hover {
-    color: white;
+  font-weight: bold;
+  background: linear-gradient(to bottom, yellow, gold, orange, orangered, red, crimson);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 @keyframes titre {
@@ -151,8 +144,8 @@ body {
   background: #121212;
   display: flex;
   flex-direction: column;
-  gap: 45px;
-  padding: 40px;
+  gap: 30px;
+  padding: 60px 40px;
   border-radius: 20px;
   text-align: center;
   margin: 20px auto;
@@ -166,6 +159,7 @@ body {
   font-family:'Orbitron';
   font-size: 35px;
   margin-left: -1px;
+  margin-bottom: 30px;
 }
 
 .level_lists_content span {
@@ -177,7 +171,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .level_lists_top {
@@ -209,13 +203,70 @@ body {
   align-items: center;
   justify-content: center;
   color: #fff;
+  cursor: pointer;
   font-size: 20px;
 }
 
-.level_button {
+.level_lists_number_unique {
+  width: 80px;
+  height: 80px;
+  background: #0f0f0f;
+  border: 2px solid #a64fff;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.level_lists_number_unique a {
+  text-decoration: none;
+  transition: transform 0.3s ease
+}
+
+.level_lists_number_unique a:hover {
+  transform: scale(1.1);
+}
+
+.level_lists_number_unique:hover {
+  background-color: white;
+  border: 2px solid #a64fff;
+  color: #a64fff;
+}
+
+.level_bouton {
   display: flex;
   justify-content: center;
+  gap: 25%;
+  margin-top: 50px;
+  margin-inline: 125px;
+}
+
+.level_bouton button {
+  font-family:'Orbitron';
+}
+
+.level_bouton_2 {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+}
+
+.level_bouton_2 button {
+  font-family:'Orbitron';
+}
+
+.level_bouton_defilement {
+  display: flex;
+  flex-direction: row;
   gap: 20px;
+}
+
+.level_bouton_defilement button {
+  font-family:'Orbitron';
 }
 
 .level_button_retour {
@@ -225,9 +276,8 @@ body {
   border-radius: 10px;
   padding: 10px 20px;
   cursor: pointer;
-  display: flex;
+  text-align: center;
   align-items: center;
-  gap: 8px;
   transition: 0.3s ease;
 }
 
@@ -243,12 +293,30 @@ body {
   padding: 10px 20px;
   cursor: pointer;
   display: flex;
+  text-align: center;
   align-items: center;
   gap: 8px;
   transition: 0.3s ease;
 }
 
 .level_button_suivant:hover {
+  background: #1f1f1f;
+}
+
+.level_button_precedent {
+  background: #0f0f0f;
+  color: #fff;
+  border: 2px solid #a64fff;
+  border-radius: 10px;
+  padding: 10px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s ease;
+}
+
+.level_button_precedent:hover {
   background: #1f1f1f;
 }
 
@@ -372,8 +440,9 @@ body {
 
   .langage_lists {
     display: flex;
+    gap: 15%;
     text-align: center;
-    margin-left: 4%;
+    margin-left: 1%;
     padding-bottom: 25px;
   }
 
@@ -397,8 +466,9 @@ body {
 
   .difficulty_lists {
     display: flex;
+    gap: 15%;
     text-align: center;
-    margin-left: 4%;
+    margin-left: 8%;
     padding-bottom: 25px;
   }
 
@@ -422,9 +492,10 @@ body {
 
   .mode_lists {
     display: flex;
+    align-items: center;
     text-align: center;
-    gap: -35px;
-    margin-left: 10%;
+    gap: 25%;
+    margin-left: 23.5%;
     padding-bottom: 25px;
   }
 

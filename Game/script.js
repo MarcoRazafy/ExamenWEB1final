@@ -24,22 +24,22 @@ const words = {
 };
 
 
-document.querySelector('.return').addEventListener('click', function() {
-    window.location.href = '../index.html'; 
-  });
+document.querySelector('.return').addEventListener('click', function () {
+    window.location.href = '../index.html';
+});
 
 // titre
 const title = "TYPING TEST";
-        const animatedTitle = document.getElementById('animatedTitle');
-        
-        title.split('').forEach((letter, index) => {
-            const span = document.createElement('span');
-            span.className = 'letter';
-            span.textContent = letter;
-            span.style.animationDelay = `${index * 0.1}s`;
-            animatedTitle.appendChild(span);
-        });
-        
+const animatedTitle = document.getElementById('animatedTitle');
+
+title.split('').forEach((letter, index) => {
+    const span = document.createElement('span');
+    span.className = 'letter';
+    span.textContent = letter;
+    span.style.animationDelay = `${index * 0.1}s`;
+    animatedTitle.appendChild(span);
+});
+
 
 // Generate a random word from the selected mode
 const getRandomWord = (mode) => {
@@ -78,42 +78,62 @@ const startTimer = () => {
 // Calculate and return WPM & accuracy
 const getCurrentStats = () => {
     const elapsedTime = (Date.now() - previousEndTime) / 1000; // Seconds
-    const wpm = (wordsToType[currentWordIndex].length / 5) / (elapsedTime / 60); // 5 chars = 1 word
-    const accuracy = (wordsToType[currentWordIndex].length / inputField.value.length) * 100;
 
+    const typed = inputField.value;
+    const target = wordsToType[currentWordIndex];
+
+    const wpm = (wordsToType[currentWordIndex].length / 5) / (elapsedTime / 60); // 5 chars = 1 word
+    
+    let correctChars = 0;
+    for (let i = 0; i < typed.length; i++) {
+        if (typed[i] === target[i]) {
+            correctChars++;
+        }
+    }
+
+    const accuracy = (correctChars / typed.length) * 100;
+    
     return { wpm: wpm.toFixed(2), accuracy: accuracy.toFixed(2) };
 };
 
 // Move to the next word and update stats only on spacebar press
 const updateWord = (event) => {
-    if (event.key === " ") { // Check if spacebar is pressed
-        if (inputField.value.trim() === wordsToType[currentWordIndex]) {
-            if (!previousEndTime) previousEndTime = startTime;
+    if (event.key === " ") {
+        if (!previousEndTime) previousEndTime = startTime;
 
-            const { wpm, accuracy } = getCurrentStats();
-            results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
+        const typed = inputField.value.trim();
+        const correct = typed === wordsToType[currentWordIndex];
 
-            currentWordIndex++;
-            previousEndTime = Date.now();
-            highlightNextWord();
+        const { wpm, accuracy } = getCurrentStats();
+        results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
 
-            inputField.value = ""; // Clear input field after space
-            event.preventDefault(); // Prevent adding extra spaces
-        }
+        highlightWord(currentWordIndex, correct); // Colorier le mot tapé
+
+        currentWordIndex++; // 👈 avancer vers le mot suivant
+
+        highlightCurrentWord(currentWordIndex); // Surligner le nouveau mot
+
+        previousEndTime = Date.now();
+        inputField.value = "";
+        event.preventDefault();
     }
 };
 
-// Highlight the current word in red
-const highlightNextWord = () => {
+// Color red or green
+const highlightWord = (index, isCorrect) => {
     const wordElements = wordDisplay.children;
-
-    if (currentWordIndex < wordElements.length) {
-        if (currentWordIndex > 0) {
-            wordElements[currentWordIndex - 1].style.color = "green";
-        }
-        wordElements[currentWordIndex].style.color = "#ffff";
+    if (index < wordElements.length) {
+        wordElements[index].style.color = isCorrect ? "green" : "red";
     }
 };
+
+const highlightCurrentWord = (index) => {
+    const wordElements = wordDisplay.children;
+    if (index < wordElements.length) {
+        wordElements[index].style.color = "#ffff"; // ou jaune si tu veux
+    }
+};
+
 
 // Event listeners
 // Attach `updateWord` to `keydown` instead of `input`

@@ -3,8 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
-html{
-    font-family: monospace;
+
+html {
+    font-size: .8rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: #fff;
 }
 
@@ -20,89 +22,98 @@ body {
     background-size: cover;
     display: flex;
     align-items: center;
-  animation: slideLeft 2s forwards;
+    animation: slideLeft 2s forwards;
 }
 
 @keyframes slideLeft {
-  from {
-      transform: translateX(-100%);
-      opacity: 0;
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
     }
+
     to {
-      transform: translateX(0);
-      opacity: 1;
-  }
+        transform: translateX(0);
+        opacity: 1;
+    }
 }
 
-.return{
+.return {
     position: fixed;
     top: 2rem;
     left: 2rem;
     border-radius: 50%;
-    padding:1.5rem;
+    padding: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 1rem;
     height: 1rem;
-    transition: 1s;
+    transition: .4s;
 }
-.return i{
+
+.return i {
+    cursor: pointer;
     scale: 1.2;
 }
-.return:hover{
+
+.return:hover {
     background-color: #aeaaaa;
     scale: 1.3;
 }
 
-header{
+header {
     /* background-color: aqua; */
     width: 100%;
     height: 100vh;
 }
 
-header .title{
+header .title {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 3rem;
 }
 
-header h1{
-    text-align: center;
-    font-family: sans-serif;
+header h1 {
+    display: flex;
     font-weight: 900;
-    text-transform: uppercase;
     font-size: 4rem;
     margin-top: 2rem;
+    text-align: center;
+    text-transform: uppercase;
     background-size: cover;
     background-clip: text;
     color: transparent;
-    text-shadow: 0 0 5px #00ffe0, 0 0 10px #00ffe0;
-    display: flex;
+    background: linear-gradient(to bottom, yellow, gold, orange, orangered, red, crimson);
+    text-shadow: 0 0 5px orange, 0 0 10px orange;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     -webkit-text-stroke: 2px rgb(255, 255, 255);
 }
 
-.letter{
+.letter {
     position: relative;
     animation: bounce 2.5s infinite ease-in-out;
 }
 
 @keyframes bounce {
-    0%, 100% {
+
+    0%,
+    100% {
         transform: translateY(0);
     }
+
     50% {
         transform: translateY(-10px);
     }
 }
 
 
-.box-results{
+.box-results {
     position: fixed;
     right: 2rem;
     top: 2rem;
-    width: 10%;
+    width: 15%;
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: 0 0 5px #00ffe0, 0 0 20px #00ffe0 inset;
@@ -111,47 +122,60 @@ header h1{
     font-size: 1.5rem;
 }
 
-.combin{
+.combin {
     width: 100%;
     font-size: 2rem;
     text-align: center;
     display: flex;
-    justify-content: center;
     align-items: center;
 }
- 
-main label{
-    text-shadow: 0 0 5px #a64fff, 0 0 10px #a64fff;
+
+main label {
+    text-shadow: 0 0 5px #1de9b6, 0 0 10px #1de9b6;
     text-transform: uppercase;
     font-size: 3rem;
     padding-bottom: 1rem;
     transition: .5s;
 }
-main label:hover{
-    color: #a64fff;
+
+main label:hover {
+    color: #1de9b6;
 }
 
-#mode{
-    padding: 1rem;
-    border-radius: 1rem;
-    border: 1px solid a64fff;
+#mode {
+    padding: 10px;
+    font-size: 16px;
+    width: 20%;
+    text-align: center;
+    border: 2px solid #00bcd4;
+    border-radius: 10px;
+    background-color: #222;
     color: white;
-    background-color: #a74fff5c;
+    appearance: none;
+    margin-left: 2rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
-main option{
-    background-color: #00000040;
-    border-radius: 1rem;
-    color: #000000;
+main option {
+    background-color: #333;
+    color: white;
+    font-size: 16px;
 }
 
-.center-main{
+.combin {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.center-main {
     width: 70%;
     margin: auto;
     margin-top: 3rem;
     text-align: center;
     padding: 2rem;
-    border-radius: 2rem;    
+    border-radius: 2rem;
     font-size: 2.5rem;
     color: rgba(255, 255, 255, 0.301);
     background-color: rgba(0, 0, 0, 0.76);
@@ -160,7 +184,7 @@ main option{
 
 
 
-main .center-main input{
+main .center-main input {
     width: 80%;
     font-size: 2rem;
     margin-top: .5rem;
@@ -173,3 +197,76 @@ main .center-main input{
 }
 
 
+.score {
+    position: absolute;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000056;
+}
+
+.box-score {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem;
+    border-radius: 2rem;
+    font-size: 2.5rem;
+    color: rgba(255, 255, 255, 0.301);
+    background-color: rgba(0, 0, 0, 0.76);
+    box-shadow: 0 0 5px #a64fff, 0 0 20px #a64fff inset;
+}
+
+.text-box{
+    color: red;
+}
+
+.score .box-score .boxButton{
+   display: flex;
+   justify-content: space-evenly;
+    margin-top: rem;
+}
+
+.score .box-score button{
+    width: 12rem;
+    height: 4rem;
+    border-radius: 2rem ;
+    box-shadow: 0 0 5px #00ffe0, 0 0 20px #00ffe0 inset;
+    transition: .5s;
+    cursor: pointer;
+    border: none;
+}
+.score .box-score #retry:hover{
+    background-color: white;
+}
+.score .box-score #retry i{
+    transition: transform .3s ease;
+}
+.score .box-score #retry i:hover{
+    transform: rotate(100deg);
+}
+.score .box-score #home:hover{
+    background-color: white;
+}
+
+.score .box-score #home{
+    width: 12rem;
+    height: 4rem;
+    border-radius: 2rem ;
+    background-color: orange;
+    box-shadow: 0 0 5px orange, 0 0 20px orange inset;
+}
+.score .box-score #retry{
+    width: 12rem;
+    height: 4rem;
+    border-radius: 2rem ;
+    background-color: #00ffe0;
+    box-shadow: 0 0 5px #00ffe0, 0 0 20px #00ffe0 inset;
+}
+
+.score .box-score .boxButton i{
+    scale: 2.5;
+}

@@ -1,3 +1,8 @@
+// REDIRECTION
+document.querySelector('.presentation_middle_start').addEventListener('click', function() {
+  window.location.href = 'Game/game.html'; 
+});
+
 function ouvrir_option() {
   const settings = document.getElementById("settings_list");
   settings.classList.remove("fermer");

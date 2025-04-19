@@ -16,6 +16,8 @@ const modeSelect = document.getElementById("mode");
 const wordDisplay = document.getElementById("word-display");
 const inputField = document.getElementById("input-field");
 const results = document.getElementById("results");
+const score = document.querySelector(".score");
+const TextScore = document.querySelector(".text-score");
 
 const words = {
     easy: ["apple", "banana", "grape", "orange", "cherry"],
@@ -29,7 +31,7 @@ document.querySelector('.return').addEventListener('click', function () {
 });
 
 // titre
-const title = "TYPING TEST";
+const title = "Finger...Fury";
 const animatedTitle = document.getElementById('animatedTitle');
 
 title.split('').forEach((letter, index) => {
@@ -68,6 +70,7 @@ const startTest = (wordCount = 50) => {
 
     inputField.value = "";
     results.textContent = "";
+    TextScore.textContent = "";
 };
 
 // Start the timer when user begins typing
@@ -107,15 +110,21 @@ const updateWord = (event) => {
         const { wpm, accuracy } = getCurrentStats();
         results.textContent = `WPM: ${wpm}, Accuracy: ${accuracy}%`;
 
-        highlightWord(currentWordIndex, correct); // Colorier le mot tapé
+        highlightWord(currentWordIndex, correct); 
 
-        currentWordIndex++; // 👈 avancer vers le mot suivant
+        currentWordIndex++; 
 
-        highlightCurrentWord(currentWordIndex); // Surligner le nouveau mot
+        highlightCurrentWord(currentWordIndex); 
 
         previousEndTime = Date.now();
         inputField.value = "";
         event.preventDefault();
+// ***
+        if (currentWordIndex >= wordsToType.length) {
+            showFinalScore();              
+            inputField.disabled = true;   
+            return;
+        }
     }
 };
 
@@ -130,9 +139,37 @@ const highlightWord = (index, isCorrect) => {
 const highlightCurrentWord = (index) => {
     const wordElements = wordDisplay.children;
     if (index < wordElements.length) {
-        wordElements[index].style.color = "#ffff"; // ou jaune si tu veux
+        wordElements[index].style.color = "#ffff";
     }
 };
+
+
+const showFinalScore = () => {
+    const wordElements = wordDisplay.children;
+    let correctCount = 0;
+    let incorrectCount = 0;
+
+    for (let i = 0; i < wordElements.length; i++) {
+        const color = wordElements[i].style.color;
+        if (color === "green") {
+            correctCount++;
+        } else if (color === "red") {
+            incorrectCount++;
+        }
+    }
+
+    const total = correctCount + incorrectCount;
+    score.style.display = "flex";
+    TextScore.textContent = `🏁 Fin du jeu !\n✅ Mots corrects : ${correctCount} / ${total}\n❌ Mots faux : ${incorrectCount}`;
+};
+
+//redirection game 
+document.getElementById('home').addEventListener('click', function() {
+    window.location.href = '../index.html'; 
+  });
+document.getElementById('retry').addEventListener('click', function() {
+    window.location.href = 'game.html'; 
+  });
 
 
 // Event listeners

@@ -1,44 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Finger Fury</title>
+    <link rel="stylesheet" href="accueil.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
-    <header>
-        <div class="return"><i class="fa-solid fa-arrow-left"></i></div>
+    <section class="presentation_top">
+        <h1>Finger <span>Fury</span></h1>
         
-        <div class="title">
-            <h1 class=".animated-title" id="animatedTitle"></h1>
+        <div>
+            <p>READY - SET - TYPE!</p><br>
+            <p>Challenge your speed and precision against the timer.</p>
+        </div>
+    </section>
+
+    <section class="presentation_middle">
+        <button class="presentation_middle_start"><h3>START</h3></button>
+
+        <button class="presentation_middle_level" onclick="level_btn()"><h3>LEVEL</h3></button>
+
+        <div id="level_lists">
+            <div class="level_lists_content" id="page1">
+                <h1>FINGER <span>FURY</span></h1>
+                    <div class="level_really_lists">
+                        <div class="level_lists_top">
+                            <div class="level_lists_number">
+                                <p>1</p>
+                            </div>
+            
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>2</p>
+                            </div>
+            
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>3</p>
+                            </div>
+                       </div>
+            
+                        <div class="level_lists_middle">
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>4</p>
+                            </div>
+                
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>5</p>
+                            </div>
+                
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>6</p>
+                            </div>
+                        </div>
+            
+                        <div class="level_lists_bottom">
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>7</p>
+                            </div>
+                
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>8</p>
+                            </div>
+                
+                            <div class="level_lists_number">
+                                <i class="fa-solid fa-lock"></i>
+                                <p>9</p>
+                            </div>
+                        </div>
+                    </div>
+
+                <div class="level_button">
+                    <button class="level_button_retour" onclick="level_retour()">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <p>CANCEL</p>
+                    </button>
+        
+                    <button class="level_button_suivant" onclick="level_page(2)">
+                        <p>NEXT</p>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
         </div>
 
+        <div class="level_lists_content" id="page2">
+            <div id="next_level_lists">
+                <h1>FINGER <span>FURY</span></h1>
+
+                <div>
+                    <div class="level_lists_top">
+                        <div class="level_lists_number">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>10</p>
+                        </div>
         
-        <main>
-            <div class="combin">
-                <label for="mode">Select Mode:</label>
-                <select id="mode">
-                    <option value="easy">Easy</option>
-                    <option value="medium">Medium</option>
-                    <option value="hard">Hard</option>
-                </select>
+                        <div class="level_lists_number">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>11</p>
+                        </div>
+        
+                        <div class="level_lists_number">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>12</p>
+                        </div>
+                   </div>
+        
+                    <div class="level_lists_middle">
+                        <div class="level_lists_number">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>13</p>
+                        </div>
+            
+                        <div class="level_lists_number">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>14</p>
+                        </div>
+            
+                        <div class="level_lists_number">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>15</p>
+                        </div>
+                    </div>
+        
+                    <div class="level_lists_bottom">
+                        <div class="level_lists_number">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>16</p>
+                        </div>
+            
+                        <div class="level_lists_number">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>17</p>
+                        </div>
+            
+                        <div class="level_lists_number">
+                            <i class="fa-solid fa-lock"></i>
+                            <p>18</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="next_level_bouton">
+                    <button class="level_button_retour" onclick="level_retour()">CANCEL</button>
+
+                    <div>
+                        <button class="level_button_precedent" onclick="level_page(1)"> 
+                            <i class="fa-solid fa-arrow-left"></i>
+                            <p>PRECEDENT</p>
+                        </button>
+
+                        <button class="level_button_suivant" onclick="level_page(3)">
+                            <p>NEXT</p>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="center-main">
-                <p id="word-display"></p>
-                <!-- <label for="input-field">Tapez un mot :</label> -->
-                <input type="text" id="input-field" placeholder="Tapez ici" autofocus>
+        </div>
+    </section>
+
+    <section class="presentation_bottom">
+        <button class="presentation_bottom_settings" onclick="ouvrir_option()">
+            <i class="fa-solid fa-gear"></i>
+            Settings
+        </button>
+
+        <div id="settings_list">
+            <div class="settings_list_content">
+                <div class="settings_langage">
+                    <h1>Langage</h1>
+
+                    <div class="langage_lists">
+                        <label class="langage_lists_label"><input type="radio" name="lang" value="ma"><span class="radio-mark"></span>  Malagasy</label>
+                        <label class="langage_lists_label"><input type="radio" name="lang" value="fr"><span class="radio-mark"></span>  French</label>
+                        <label class="langage_lists_label"><input type="radio" name="lang" value="en"><span class="radio-mark"></span>  English</label>
+                    </div>
+                </div>
+        
+                <div class="settings_difficulty">
+                    <h1>Difficulty</h1>
+
+                    <div class="difficulty_lists">
+                        <label class="difficulty_lists_label"><input type="radio" name="difficulty" value="easy"><span class="radio-mark"></span>  Easy</label>
+                        <label class="difficulty_lists_label"><input type="radio" name="difficulty" value="medium"><span class="radio-mark"></span>  Medium</label>
+                        <label class="difficulty_lists_label"><input type="radio" name="difficulty" value="hard"><span class="radio-mark"></span>  Hard</label>
+                    </div>
+                </div>
+        
+                <div class="settings_mode">
+                    <h1>Mode</h1>
+
+                    <div class="mode_lists">
+                        <label class="mode_lists_label"><input type="radio" name="theme" value="light"><span class="radio-mark"></span>  Light</label>
+                        <label class="mode_lists_label"><input type="radio" name="theme" value="dark"><span class="radio-mark"></span>  Dark</label>  
+                    </div>
+                </div>
+
+                <div class="button_lists">
+                    <button class="fermer_btn" onclick="fermer_option()">Close</button>
+                    <button class="applique_btn" onclick="applique_option()">Applicable</button>
+                    <button class="defaut_btn" onclick="defaut_option()">Default</button>
+                </div>
             </div>
-            <div class="box-results">
-                <span>SCORE : </span>
-                <p id="results"></p>
+        </div>
+           
+        <button class="presentation_bottom_about" onclick="ouvrir_propos()">
+            <i class="fa-solid fa-info"></i>
+            About
+        </button>
+        
+        <div id="about_content">
+            <div class="about_really_content">
+                <h1>About <strong>FINGER FURY</strong></h1>
+
+                <p>
+                    <strong>FINGER FURY </strong>is an arcade-style game designed to put your reflexes to the test.
+                    The concept is simple: tap at the right moment, dodge traps, chain actions as fast as you can… and push your limits!
+                    Each level throws you into a fast-paced, intense environment where speed and
+                    precision are the only paths to victory. As you progress, the challenge increases,
+                    forcing you to react faster, focus harder, and master every move.
+                    Whether you're a casual player looking for quick fun or a competitor chasing high scores,
+                    <strong>FINGER FURY </strong>adapts to your pace. With its clean design, glowing visuals,
+                    and intuitive gameplay, the game delivers a smooth, addictive, and adrenaline-packed experience.
+                    Tap, react, repeat… and become the master of the click !
+                </p>
+    
+                <button class="retour_btn" onclick="fermer_propos()">Cancel</button>
             </div>
-        </main>
-    </header>
-    <script src="script.js"></script>
+        </div>
+    </section>
 </body>
 
+<script src="accueil.js"></script>
 </html>

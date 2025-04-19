@@ -5,6 +5,9 @@
  * 
  * Sur ce... Amusez-vous bien ! 
  */
+
+
+
 let startTime = null, previousEndTime = null;
 let currentWordIndex = 0;
 const wordsToType = [];
@@ -20,6 +23,10 @@ const words = {
     hard: ["synchronize", "complicated", "development", "extravagant", "misconception"]
 };
 
+
+document.querySelector('.return').addEventListener('click', function() {
+    window.location.href = '../index.html'; 
+  });
 
 // titre
 const title = "TYPING TEST";
